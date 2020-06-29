@@ -1,11 +1,18 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from core.models import Evento
 
 # Create your views here.
-def consulta_evento(request, titulo_evento):
 
-    data_ev = HttpResponse.Evento.get(titulo=titulo_evento)
+# caso seja precisa usar uma view para o index importe o 'redirect' tbem de 'shortcurts'
+# def index(request):
+#      return redirect('/agenda/')
 
-    return HttpResponse('O Evento {} será em' .format(data_ev))
-
-
+def lista_eventos(request):
+        # evento = Evento.objects.get(id=1) #para consulta pelo id
+        # Pelo usuário
+        # usuario = request.user
+        # evento = Evento.objects.filter(usuario=usuario)
+        evento = Evento.objects.all() #todos
+        dados = {'eventos':evento}
+        return render(request, 'agenda.html', dados)
 

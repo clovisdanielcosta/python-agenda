@@ -15,3 +15,7 @@ class Evento (models.Model):
     # Para exibir o nome do campo no Django-Admin
     def __str__(self):
         return self.titulo
+
+    # Alterando o formato do horário que aparece na agenda
+    def get_data_evento(self):
+        return self.data_evento.strftime('%d/%m/%Y %H:%M')
