@@ -7,7 +7,7 @@ from core.models import Evento
 
 class EventoAdmin(admin.ModelAdmin):
     # Para definir quais colunas mostrar na tabela
-    list_display = ('titulo', 'data_evento', 'local', 'data_criacao', 'usuario')
+    list_display = ('id', 'titulo', 'data_evento', 'local', 'data_criacao', 'usuario')
     # Adicionando filtros para busca na página do Django-Admin
     list_filter = ('titulo', 'usuario', 'data_evento', 'local')
 
