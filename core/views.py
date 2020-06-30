@@ -25,9 +25,10 @@ def submit_login(request):
                         messages.error(request, 'Usuário ou Senha inválidos')
         return  redirect('/')
 
-# caso seja precisa usar uma view para o index importe o 'redirect' tbem de 'shortcurts'
-# def index(request):
-#      return redirect('/agenda/')
+                # caso seja precisa usar uma view para o index importe o 'redirect' tbem de 'shortcurts'
+                # def index(request):
+                #      return redirect('/agenda/')
+
 @login_required(login_url='/login/') # Precisa colocar a barra no início pra não concatenar
 def lista_eventos(request):
         # evento = Evento.objects.get(id=1) #para consulta pelo id
@@ -38,3 +39,21 @@ def lista_eventos(request):
         dados = {'eventos':evento}
         return render(request, 'agenda.html', dados)
 
+@login_required(login_url='/login/')
+def evento(request):
+        return render(request, 'evento.html')
+
+@login_required(login_url='/login/')
+def submit_evento(request):
+        if request.POST:
+                titulo = request.POST.get('titulo')
+                data_evento = request.POST.get('data_evento')
+                local = request.POST.get('local_evento')
+                descricao = request.POST.get('descricao')
+                usuario = request.user
+                Evento.objects.create(titulo=titulo,
+                                      data_evento=data_evento,
+                                      local = local,
+                                      descricao=descricao,
+                                      usuario=usuario)
+        return redirect('/')
