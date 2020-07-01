@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from core.models import Evento
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from  django.contrib import messages
+from django.contrib import messages
+from datetime import datetime, timedelta
+from django.http.response import Http404
 
 # Create your views here.
 
@@ -35,7 +37,9 @@ def lista_eventos(request):
         # Pelo usuário
         #evento = Evento.objects.all() #todos
         usuario = request.user
-        evento = Evento.objects.filter(usuario=usuario)
+        data_atual = datetime.now() - timedelta(hours=2) # Pegando não atrasados de de até 1 hora atrás
+        evento = Evento.objects.filter(usuario=usuario,
+                                       data_evento__gt=data_atual) # '__lt' para datas menores
         dados = {'eventos':evento}
         return render(request, 'agenda.html', dados)
 
@@ -82,7 +86,12 @@ def submit_evento(request):
 def delete_evento(request, id_evento):
         # Impedindo a deleção de evento de outro usuário
         usuario = request.user
-        evento = Evento.objects.get(id=id_evento)
+        try:
+                evento = Evento.objects.get(id=id_evento)
+        except Exception:
+                raise Http404()
         if usuario == evento.usuario:
                 evento.delete()
+        else:
+                raise Http404()
         return redirect('/')
