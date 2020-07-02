@@ -2,24 +2,37 @@
 
 {% block content %}
 <h2>Agendamentos</h2>
-    <a href="evento/">
-        <button type="button">Novo Evento</button>
-    </a>
-    <ul style="font-size: 20px">
+
+    <a href="evento/"><button type="button">Novo Evento</button></a>
+    <a href=""><button type="button">Eventos Atrasados</button></a>
+    <a href=""><button type="button">Eventos Futuros</button></a>
+    <a href=""><button type="button">Todos Eventos</button></a>
+
+    <div class="wrapper">
+            <div class="header">Data/Horário</div>
+            <div class="header">Evento</div>
+            <div class="header">Detalhes do Evento</div>
+            <div class="header">Local</div>
+            <div class="header" id="action-titulo">Ações</div>
+        </div>
+    </div>
+
     {% for evento in eventos %}
-        <li>
-            <div style={% if evento.get_evento_atrasado %}
+
+            <div class="wrapper" id="itens" style={% if evento.get_evento_atrasado %}
                         "color:red"
                         {% endif %}>
-                {{ evento.get_data_evento }}
-                - {{ evento.titulo }}
-                - {{ evento.descricao }}
-                - {{ evento.local }} (
+                <div>{{ evento.get_data_evento }}</div>
+                <div>{{ evento.titulo }}</div>
+                <div>{{ evento.descricao }}</div>
+                <div>{{ evento.local }}</div>
+                <div id="action-itens">(
                 <a href="evento/?id={{ evento.id }}"><b>Editar</b></a>  |
                 <a href="evento/delete/{{ evento.id }}"><b>Excluir</b></a>
-                )
+                )</div>
+
             </div>
-        </li>
+
     {% endfor %}
-    </ul>
+
 {% endblock %}

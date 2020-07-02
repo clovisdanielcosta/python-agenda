@@ -1,0 +1,49 @@
+body {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+button {
+    margin-bottom: 3px;
+    margin-bottom: 2px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
+}
+* {box-sizing: border-box;}
+.wrapper {
+    border: 1px solid olive;
+    border-radius: 5px;
+    background-color: green;
+}
+.wrapper > div {
+    /*border: 1px solid #ffa94d;*/
+    border-radius: 5px;
+    padding: 2px;
+
+}
+.nested {
+    border: 1px solid #ffec99;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+.header {
+    font-weight: Bold;
+    color: White;
+}
+
+#itens {
+    background-color: White;
+    padding: 2px;
+}
+
+#action-titulo{
+    align: center;
+}
+
+#action-itens{
+    align: center;
+}
