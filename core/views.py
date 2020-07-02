@@ -45,6 +45,18 @@ def lista_eventos(request):
         return render(request, 'agenda.html', dados)
 
 @login_required(login_url='/login/')
+def lista_todos_eventos(request):
+        usuario = request.user
+        if usuario == 'admin':
+                evento = Evento.objects.all()
+        else:
+                evento = Evento.objects.filter(usuario=usuario)
+
+        dados = {'eventos': evento}
+        return render(request, 'agenda.html', dados)
+
+
+@login_required(login_url='/login/')
 def evento(request):
         id_evento = request.GET.get('id')
         dados = {}

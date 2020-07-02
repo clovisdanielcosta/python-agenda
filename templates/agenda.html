@@ -4,9 +4,10 @@
 <h2>Agendamentos</h2>
 
     <a href="evento/"><button type="button">Novo Evento</button></a>
-    <a href=""><button type="button">Eventos Atrasados</button></a>
+    <a href=""><button type="button">Eventos Passados</button></a>
     <a href=""><button type="button">Eventos Futuros</button></a>
-    <a href=""><button type="button">Todos Eventos</button></a>
+    <a href="todos/"><button type="submit">Todos Eventos</button></a>
+    <a href=""><button type="button">Exportar Dados</button></a>
 
     <div class="wrapper">
             <div class="header">Data/Horário</div>
@@ -14,7 +15,6 @@
             <div class="header">Detalhes do Evento</div>
             <div class="header">Local</div>
             <div class="header" id="action-titulo">Ações</div>
-        </div>
     </div>
 
     {% for evento in eventos %}
