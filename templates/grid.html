@@ -1,0 +1,114 @@
+<!DOCTYPE html>    
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <style>
+      *{
+  margin: 0;
+  font-family: arial;
+}
+.color-1{
+  background-color: #1C35CF;
+}
+.color-2{
+  background-color: #8A33FA;
+}
+.color-3{
+  background-color: #BD43C0;
+}
+.color-4{
+  background-color: #DD375B;
+}
+.color-5{
+  background-color: #1A9541;
+}
+.color-6{
+  background-color: #D44024;
+}
+.color-7{
+  background-color: #BD43C0;
+}
+.color-8{
+  background-color: #1C35CF;
+}
+.color-9{
+  background-color: #1A9541;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-auto-rows: 70px;
+  grid-gap: 10px;
+}
+
+/*.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  grid-auto-rows: 70px;
+  grid-gap: 10px;
+}
+
+/*.grid{
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-template-rows: 100px 100px;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+}
+/*.grid{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 100px repeat(6, 1fr); 
+  grid-template-rows: repeat(4, 200px);
+}
+
+/*.grid{
+  display: grid;
+  grid-gap: 10px 20px; /* Espaçamento entre linhas e colunas */    
+  /*grid-auto-rows: 200px; /* Altura das linhas auto é padrão */ 
+  /*grid-template-columns: 100px repeat(6, 1fr); 
+  grid-template-rows: repeat(4, 200px);
+  /*grid-template-columns: repeat(4, 2fr);/* repeat(4, 100px 200px /* 2fr 1fr; /* 400px 500px; /* Tamanho das colunas */
+  /*grid-template-rows: 200px 150px; /* Altura das linhas individuais */
+/*}*/
+.grid-item{
+  order: 3;
+  color: white;
+  padding: 10px;
+}
+
+.color-5{
+  order: 1;
+}
+.color-8{
+  order: 2;
+}
+/*
+.grid-item:nth-child(5){
+  grid-column: 1;
+  grid-row: 1 / 3;
+}*/
+
+.grid-item:nth-child(9){
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+}
+  </style>
+
+  <title>Grid Layout - Parte 1</title>
+</head>
+<body>
+  <div class="grid">
+    <div class="grid-item color-1">1</div>
+    <div class="grid-item color-2">2</div>
+    <div class="grid-item color-3">3</div>
+    <div class="grid-item color-4">4</div>
+    <div class="grid-item color-5">5</div>
+    <div class="grid-item color-6">6</div>
+    <div class="grid-item color-7">7</div>
+    <div class="grid-item color-8">8</div>
+    <div class="grid-item color-9">9</div>
+  </div>
+</body>
+</html>
