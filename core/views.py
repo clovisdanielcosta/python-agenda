@@ -32,18 +32,20 @@ def submit_login(request):
                 # def index(request):
                 #      return redirect('/agenda/')
 
+# Lista os eventos atuais a partir de duas horas atrás
 @login_required(login_url='/login/') # Precisa colocar a barra no início pra não concatenar
 def lista_eventos(request):
         # evento = Evento.objects.get(id=1) #para consulta pelo id
         # Pelo usuário
         #evento = Evento.objects.all() #todos
         usuario = request.user
-        data_atual = datetime.now() - timedelta(hours=2) # Pegando não atrasados de de até 1 hora atrás
+        data_atual = datetime.now() - timedelta(days=1) # Pegando não atrasados de de até 1 hora atrás
         evento = Evento.objects.filter(usuario=usuario,
                                        data_evento__gt=data_atual) # '__lt' para datas menores
         dados = {'eventos':evento}
         return render(request, 'agenda.html', dados)
 
+# Lista todos os eventos
 @login_required(login_url='/login/')
 def lista_todos_eventos(request):
         usuario = request.user
@@ -55,7 +57,17 @@ def lista_todos_eventos(request):
         dados = {'eventos': evento}
         return render(request, 'agenda.html', dados)
 
+# Lista apenas os eventos passados
+@login_required(login_url='/login/') # Precisa colocar a barra no início pra não concatenar
+def lista_eventos_passados(request):
+        usuario = request.user
+        data_atual = datetime.now() - timedelta(hours=2) # Pegando não atrasados de de até 1 hora atrás
+        evento = Evento.objects.filter(usuario=usuario,
+                                       data_evento__lt=data_atual) # '__lt' para datas menores
+        dados = {'eventos':evento}
+        return render(request, 'agenda.html', dados)
 
+# Consulta um evento pelo id
 @login_required(login_url='/login/')
 def evento(request):
         id_evento = request.GET.get('id')
@@ -64,6 +76,7 @@ def evento(request):
                 dados['evento'] = Evento.objects.get(id=id_evento)
         return render(request, 'evento.html', dados)
 
+# Inclui um novo evento
 @login_required(login_url='/login/')
 def submit_evento(request):
         if request.POST:
@@ -95,6 +108,7 @@ def submit_evento(request):
                                               usuario=usuario)
         return redirect('/')
 
+# Exclui um evento
 @login_required(login_url='/login/')
 def delete_evento(request, id_evento):
         # Impedindo a deleção de evento de outro usuário
@@ -109,8 +123,14 @@ def delete_evento(request, id_evento):
                 raise Http404()
         return redirect('/')
 
+# Lista eventos em formato JSON
 @login_required(login_url='/login/')
-def json_lista_evento(request, id_usuario):
-        usuario = User.objects.get(id=id_usuario)
-        evento = Evento.objects.filter(usuario=usuario).values('id', 'titulo')
+def json_lista_evento(request):
+        usuario = request.user
+        evento = Evento.objects.all().values('id',
+                                             'titulo',
+                                             'descricao',
+                                             'data_evento',
+                                             'local',
+                                             'data_criacao')
         return JsonResponse(list(evento), safe=False)

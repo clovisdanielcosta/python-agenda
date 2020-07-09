@@ -1,29 +1,37 @@
 {% extends "model-page.html" %}
 
 <script>
+currURL= window.location.href;
+if currURL == "http://127.0.0.1:8000/agenda/todos/"
+td = window.history.pushState({}, document.title, "/" + "todos/");
 
-    window.history.replaceState({}, document.title, "/" + "todos/");
 </script>
-{% block content %}
 <h2>Agendamentos</h2>
 
-    <a href="evento/"><button type="button">Novo Evento</button></a>
-    <a href=""><button type="button">Eventos Passados</button></a>
-    <a href=""><button type="button">Eventos Futuros</button></a>
-    <a href="todos/"><button type="button">Todos Eventos</button></a>
-    <a href=""><button type="button">Exportar Dados</button></a>
+{% block content %}
 
-    <div class="wrapper">
-            <div class="header">Data/Horário</div>
-            <div class="header">Evento</div>
-            <div class="header">Detalhes do Evento</div>
-            <div class="header">Local</div>
-            <div class="header" id="action-titulo">Ações</div>
-    </div>
+    <a href="http://127.0.0.1:8000/agenda/">
+        <button class="bbtn" type="button">Início</button></a>
+    <a href="http://127.0.0.1:8000/agenda/evento/">
+        <button class="bbtn" type="button">Novo Evento</button></a>
+    <a href="http://127.0.0.1:8000/agenda/passado/">
+        <button class="bbtn" type="button">Eventos Passados</button></a>
+    <a href="http://127.0.0.1:8000/agenda/todos/">
+        <button class="bbtn" type="button">Todos Eventos</button></a>
+    <a href="http://127.0.0.1:8000/exportar/exporta/" target="_blank">
+        <button class="bbtn" type="button">Exportar Dados</button></a>
+
+        <div>
+            <div>Data/Horário</div>
+            <div>Evento</div>
+            <div>Detalhes do Evento</div>
+            <div>Local</div>
+            <div>Ações</div>
+        </div>
 
     {% for evento in eventos %}
 
-            <div class="wrapper" id="itens" style={% if evento.get_evento_atrasado %}
+            <div id="itens" style={% if evento.get_evento_atrasado %}
                         "color:red"
                         {% endif %}>
                 <div>{{ evento.get_data_evento }}</div>
@@ -31,8 +39,8 @@
                 <div>{{ evento.descricao }}</div>
                 <div>{{ evento.local }}</div>
                 <div id="action-itens">(
-                <a href="evento/?id={{ evento.id }}"><b>Editar</b></a>  |
-                <a href="evento/delete/{{ evento.id }}"><b>Excluir</b></a>
+                <a href="http://127.0.0.1:8000/agenda/evento/?id={{ evento.id }}"><b>Editar</b></a>  |
+                <a href="http://127.0.0.1:8000/agenda/evento/delete/{{ evento.id }}"><b>Excluir</b></a>
                 )</div>
 
             </div>
