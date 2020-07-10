@@ -3,52 +3,79 @@
 <html lang="pt_br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="agenda.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/agenda.css' %}">
+    <title>Agenda Pessoal</title>	
 
-    {% include "model-header.html" %}
 </head>
 
 <body>
-   <a href="http://127.0.0.1:8000/agenda/">
-        <button class="bbtn" type="button">Início</button></a>
-    <a href="http://127.0.0.1:8000/agenda/evento/">
-        <button class="bbtn" type="button">Novo Evento</button></a>
-    <a href="http://127.0.0.1:8000/agenda/passado/">
-        <button class="bbtn" type="button">Eventos Passados</button></a>
-    <a href="http://127.0.0.1:8000/agenda/todos/">
-        <button class="bbtn" type="button">Todos Eventos</button></a>
-    <a href="http://127.0.0.1:8000/exportar/exporta/" target="_blank">
-        <button class="bbtn" type="button">Exportar Dados</button></a>
+	<section class="col-l"></section>
+	
+	<div class="logout">
+		<div id="user">
+			Usuário: <b id="user-name"> {{ user }} </b>
+		</div>
+		<div id="icon-logout">
+			<a href="/logout">
+				<img src="https://img.icons8.com/officel/30/000000/shutdown.png"/></a>
+		</div>
+	</div>
+	<div class="header">Agenda de Compromissos</div>
+	<div class="buttons">
+		<a href="http://127.0.0.1:8000/agenda/">
+			<button class="bbtn" type="button">Início</button></a>
+		<a href="http://127.0.0.1:8000/agenda/evento/">
+			<button class="bbtn" type="button">Novo Evento</button></a>
+		<a href="http://127.0.0.1:8000/agenda/passado/">
+			<button class="bbtn" type="button">Eventos Passados</button></a>
+		<a href="http://127.0.0.1:8000/agenda/todos/">
+			<button class="bbtn" type="button">Todos Eventos</button></a>
+		<a href="http://127.0.0.1:8000/exportar/exporta/" target="_blank">
+			<button class="bbtn" type="button">Exportar Dados</button></a>
+	</div>
+	
+    <div class="title">
+		<div id="title-date">Data/Horário</div>
+		<div id="title-event">Evento</div>
+		<div id="title-detail">Detalhes do Evento</div>
+		<div id="title-local">Local</div>
+		<div id="title-action">Ações</div>
+	</div>
+
+	
+	<div class="main">
+
+		{% for evento in eventos %}
+
+		<div id="main-date" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
+			{{ evento.get_data_evento }}</div>
+		<div id="main-event" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
+			{{ evento.titulo }}</div>
+		<div id="main-detail" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
+			{{ evento.descricao }}</div>
+		<div id="main-local" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
+			{{ evento.local }}</div>
+		<div id="main-action">
+			<a href="http://127.0.0.1:8000/agenda/evento/?id={{ evento.id }}">
+				<img id="icon-edit" src="https://img.icons8.com/cotton/64/000000/edit--v1.png"/></a>
+			<a href="http://127.0.0.1:8000/agenda/evento/delete/{{ evento.id }}">
+				<img id="icon-delete" src="https://img.icons8.com/fluent/48/000000/delete-sign.png"/></a>
+		</div>
+		
+		{% endfor %}
+		
+	</div>
+
+	<div class="footer"> 
+		<a href="https://www.linkedin.com/in/clovisdaniel/" target="_blank">
+		<img id="icon-github" src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png"/></a>
+		<a href="https://github.com/clovisdanielcosta" target="_blank">
+		<img id="icon-linkedin" src="https://img.icons8.com/fluent/48/000000/github.png"/></a>
+		<div id="footer-text">Desenvolvido por Clovis Daniel Costa</div>
+	</div>
 
 
-<div class="grid">
-    <div class="grid-item color-1">Data/Horário</div>
-    <div class="grid-item color-2">Evento</div>
-    <div class="grid-item color-3">Detalhes do Evento</div>
-    <div class="grid-item color-4">Local</div>
-    <div class="grid-item color-5">Ações</div>
-  </div>
-
-    {% for evento in eventos %}
-
-            <div id="itens" style={% if evento.get_evento_atrasado %}
-                        "color:red"
-                        {% endif %}>
-                <div>{{ evento.get_data_evento }}</div>
-                <div>{{ evento.titulo }}</div>
-                <div>{{ evento.descricao }}</div>
-                <div>{{ evento.local }}</div>
-                <div id="action-itens">(
-                <a href="http://127.0.0.1:8000/agenda/evento/?id={{ evento.id }}">
-                    <b>Editar</b></a>  |
-                <a href="http://127.0.0.1:8000/agenda/evento/delete/{{ evento.id }}">
-                    <b>Excluir</b></a>
-                )</div>
-
-            </div>
-
-    {% endfor %}
-
+	<section class="col-r"></section>
 </body>
 </html>

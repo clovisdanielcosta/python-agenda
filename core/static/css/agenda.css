@@ -1,41 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
 body, html {
-   height: 50vh;
-   width: 800px;
+   height: 100vh;
 }
 
+/* Mobile First */
 body{
     margin: 0;
     display: grid;
-    grid-templates-columns: auto 10% 10% 10% 10%;
-    grid-templates-rows: auto 20% 20% 10% 20%;
-    grid-templates-areas:
-        "header     header  header  header  login"
-        "buttons    buttons buttons buttons buttons"
-        "itens      itens   itens   itens   itens"
-        "footer     footer  footer  footer  footer"
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(auto, 4);
+    grid-template-areas:
+        "header"	
+        "buttons"
+        "main"
+        "footer"
 }
 
-header{
+/* Cabeçalho da página */
+.header{
     grid-area: header;
-    background-color: green;
+    background-color: #e1e1ec;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Roboto, Helvetica, sans-serif;
+    color: rgb(71, 71, 71);
+    padding-top: 10px;
 }
 
-aside{
-    grid-area: login;
-    background-color: lime;
+/* Logout do sistema */
+.logout{
+    grid-area: logout;
+    background-color: #e1e1ec;
+    text-align: right;
+    padding-right: 10px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: gray;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
 }
 
-section{
+.logout #user{
+    padding-right: 20px;
+    padding-top: 15px;
+}    
+
+#user-name{
+    color: #e02041;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Botões */
+.buttons{
     grid-area: buttons;
-    background-color: red;
+    background-color: #e1e1ec;
 }
 
-main {
-    grid-area: itens;
-    background: pink;
+/* Rótulos das colunas */
+.title{
+    grid-area: title;
+    background-color: #e1e1ec;
+    display: grid;
+    grid-template-columns: 13% 20% 39% 21% 7%;
+    justify-content: start;
+    padding-top: 5px;
+    font-size: 20px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(71, 71, 71);
 }
 
-footer{
+/* Espaços de inícios dos titulos */
+#title-date{
+    text-align: center;
+}
+#title-event{
+    text-align: left;
+    padding-left: 20px;
+}
+#title-detail{
+    text-align: left;
+    padding-left: 2px;
+}
+#title-local{
+    text-align: left;
+}
+#title-action{  
+    text-align: center;
+}
+
+/* Seção principal de exibição dos registros */
+.main {
+    grid-area: main;
+    background: white;
+    display: grid;
+    grid-template-columns: 13% 20% 39% 21% 7%;
+    justify-content: start;
+    height: 25px;
+    padding-top: 5px;
+    font-size: 18px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: rgb(71, 71, 71);
+}
+
+/* Espaços de inícios dos registros no main */
+#main-date{
+    text-align: center;
+    border-bottom: 2px;
+    border-bottom: solid #e1e1ec;
+}
+#main-event{
+    text-align: left;
+    padding-left: 20px;
+    border-bottom: 2px;
+    border-bottom: solid #e1e1ec;
+}
+#main-detail{
+    text-align: left;
+    padding-left: 2px;
+    border-bottom: 2px;
+    border-bottom: solid #e1e1ec;
+}
+#main-local{
+    text-align: left;
+    border-bottom: 2px;
+    border-bottom: solid #e1e1ec;
+}
+#main-action{  
+    text-align: center;
+    border-bottom: 2px;
+    border-bottom: solid #e1e1ec;
+}   
+
+/* Rodapé */
+.footer{
     grid-area: footer;
-    background-color: black;
+    background-color: #e1e1ec;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#footer-text{
+    color: #e02041;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+}
+
+.bbtn {
+    width: 160px;
+    height: 36px;
+     background: #e02041;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: 0;
+    margin-top: 23px;
+    transition: background-color 400ms;
+}
+
+.bbtn:hover {
+        opacity: 0.8;
+}
+
+.col-l{
+    grid-area: col-l;
+    background-color: #e1e1ec;   
+}
+
+.col-r{
+    grid-area: col-r;
+    background-color: #e1e1ec;   
+}
+
+
+/* Ícones */
+#icon-edit{
+    height: 25px;
+
+}
+#icon-delete{
+    height: 25px;
+}
+#icon-github{
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#icon-linkedin{
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+.logout #icon-logout{
+    padding-left: 10px;
+    padding-top: 10px;
+} 
+
+@media only screen and (min-width: 768px) {
+    
+    body{
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto 24% 24% 24% 24% auto;
+        grid-template-rows: 10% 10% 5% auto 7%;
+        grid-template-areas:
+            "col-l   header  header  header  logout  col-r"
+            "col-l   buttons buttons buttons buttons col-r"	
+            "col-l   title   title   title   title   col-r"
+            "col-l   main    main    main    main    col-r"
+            "col-l   footer  footer  footer  footer  col-r"
+            
+    }
+    
 }
