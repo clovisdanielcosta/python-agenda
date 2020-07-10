@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>	
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+	<section class="col-l"></section>
+	
+	<div class="logout">
+		<div id="user">
+			Usuário: {{ user }}
+		</div>
+		<div id="icone-logout">
+			<a href="/logout"><img src="https://img.icons8.com/officel/30/000000/shutdown.png"/></a>
+		</div>
+	</div>
+	<div class="header">Agenda de Compromissos</div>
+	<div class="buttons">
+		<a href="http://127.0.0.1:8000/agenda/">
+			<button class="bbtn" type="button">Início</button></a>
+		<a href="http://127.0.0.1:8000/agenda/evento/">
+			<button class="bbtn" type="button">Novo Evento</button></a>
+		<a href="http://127.0.0.1:8000/agenda/passado/">
+			<button class="bbtn" type="button">Eventos Passados</button></a>
+		<a href="http://127.0.0.1:8000/agenda/todos/">
+			<button class="bbtn" type="button">Todos Eventos</button></a>
+		<a href="http://127.0.0.1:8000/exportar/exporta/" target="_blank">
+			<button class="bbtn" type="button">Exportar Dados</button></a>
+	</div>
+    <div class="title">
+		<div id="title-date">Data/Horário</div>
+		<div id="title-event">Evento</div>
+		<div id="title-detail">Detalhes do Evento</div>
+		<div id="title-local">Local</div>
+		<div id="title-action">Ações</div>
+	</div>
+	<div class="main">
+		<div id="main-date">01/06/2020 16:15</div>
+		<div id="main-event">Mecânico</div>
+		<div id="main-detail">Levar carro para fazer geometria</div>
+		<div id="main-local">Oficina Carro Center</div>
+		<div id="main-action">
+			<img id="icone-edit" src="https://img.icons8.com/cotton/64/000000/edit--v1.png"/>
+			<img id="icone-delete" src="https://img.icons8.com/fluent/48/000000/delete-sign.png"/>
+		</div>
+	</div>
+    <div class="footer">Desenvolvido por Clovis Daniel Costa</div>
+	<section class="col-r"></section>
+</body>
+</html>

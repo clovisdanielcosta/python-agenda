@@ -1,0 +1,41 @@
+body, html {
+   height: 50vh;
+   width: 800px;
+}
+
+body{
+    margin: 0;
+    display: grid;
+    grid-templates-columns: auto 10% 10% 10% 10%;
+    grid-templates-rows: auto 20% 20% 10% 20%;
+    grid-templates-areas:
+        "header     header  header  header  login"
+        "buttons    buttons buttons buttons buttons"
+        "itens      itens   itens   itens   itens"
+        "footer     footer  footer  footer  footer"
+}
+
+header{
+    grid-area: header;
+    background-color: green;
+}
+
+aside{
+    grid-area: login;
+    background-color: lime;
+}
+
+section{
+    grid-area: buttons;
+    background-color: red;
+}
+
+main {
+    grid-area: itens;
+    background: pink;
+}
+
+footer{
+    grid-area: footer;
+    background-color: black;
+}

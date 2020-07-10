@@ -1,16 +1,16 @@
-{% extends "model-page.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="agenda.css">
 
-<script>
-currURL= window.location.href;
-if currURL == "http://127.0.0.1:8000/agenda/todos/"
-td = window.history.pushState({}, document.title, "/" + "todos/");
+    {% include "model-header.html" %}
+</head>
 
-</script>
-<h2>Agendamentos</h2>
-
-{% block content %}
-
-    <a href="http://127.0.0.1:8000/agenda/">
+<body>
+   <a href="http://127.0.0.1:8000/agenda/">
         <button class="bbtn" type="button">Início</button></a>
     <a href="http://127.0.0.1:8000/agenda/evento/">
         <button class="bbtn" type="button">Novo Evento</button></a>
@@ -21,13 +21,14 @@ td = window.history.pushState({}, document.title, "/" + "todos/");
     <a href="http://127.0.0.1:8000/exportar/exporta/" target="_blank">
         <button class="bbtn" type="button">Exportar Dados</button></a>
 
-        <div>
-            <div>Data/Horário</div>
-            <div>Evento</div>
-            <div>Detalhes do Evento</div>
-            <div>Local</div>
-            <div>Ações</div>
-        </div>
+
+<div class="grid">
+    <div class="grid-item color-1">Data/Horário</div>
+    <div class="grid-item color-2">Evento</div>
+    <div class="grid-item color-3">Detalhes do Evento</div>
+    <div class="grid-item color-4">Local</div>
+    <div class="grid-item color-5">Ações</div>
+  </div>
 
     {% for evento in eventos %}
 
@@ -39,12 +40,15 @@ td = window.history.pushState({}, document.title, "/" + "todos/");
                 <div>{{ evento.descricao }}</div>
                 <div>{{ evento.local }}</div>
                 <div id="action-itens">(
-                <a href="http://127.0.0.1:8000/agenda/evento/?id={{ evento.id }}"><b>Editar</b></a>  |
-                <a href="http://127.0.0.1:8000/agenda/evento/delete/{{ evento.id }}"><b>Excluir</b></a>
+                <a href="http://127.0.0.1:8000/agenda/evento/?id={{ evento.id }}">
+                    <b>Editar</b></a>  |
+                <a href="http://127.0.0.1:8000/agenda/evento/delete/{{ evento.id }}">
+                    <b>Excluir</b></a>
                 )</div>
 
             </div>
 
     {% endfor %}
 
-{% endblock %}
+</body>
+</html>

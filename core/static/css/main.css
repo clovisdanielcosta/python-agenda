@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+body, html {
+   height: 100vh;
+}
+
+/* Mobile First */
+body{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(auto, 4);
+    grid-template-areas:
+        "header"	
+        "buttons"
+        "main"
+        "footer"
+}
+
+/* Cabeçalho da página */
+.header{
+    grid-area: header;
+    background-color: #e1e1ec;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Roboto, Helvetica, sans-serif;
+    color: rgb(71, 71, 71);
+    padding-top: 10px;
+}
+
+/* Logout do sistema */
+.logout{
+    grid-area: logout;
+    background-color: #e1e1ec;
+    text-align: right;
+    padding-right: 10px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: gray;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.logout #user{
+    padding-left: 150px;
+    padding-top: 10px;
+}    
+
+.logout #icone-logout{
+    padding-left: 10px;
+    padding-top: 10px;
+}    
+
+/* Botões */
+.buttons{
+    grid-area: buttons;
+    background-color: #e1e1ec;
+}
+
+/* Rótulos das colunas */
+.title{
+    grid-area: title;
+    background-color: #e1e1ec;
+    display: flex;
+    padding-top: 5px;
+    font-size: 20px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(71, 71, 71);
+}
+
+/* Espaços de inícios dos titulos */
+#title-date{
+    padding-left: 20px;
+}
+#title-event{
+    padding-left: 100px;
+}
+#title-detail{
+    padding-left: 200px;
+}
+#title-local{
+    padding-left: 300px;
+}
+#title-action{
+    padding-left: 200px;
+}
+
+/* Espaços de inícios dos registros no main */
+#main-date{
+    padding-left: 20px;
+}
+#main-event{
+    padding-left: 100px;
+}
+#main-detail{
+    padding-left: 100px;
+}
+#main-local{
+    padding-left: 250px;
+}
+#main-action{
+    padding-left: 200px;
+}
+
+#icone-edit{
+    height: 30px;
+}
+#icone-delete{
+    height: 30px;
+}
+
+
+
+
+
+
+
+/* Seção principal de exibição dos registros */
+.main {
+    grid-area: main;
+    background: white;
+    display: flex;
+    padding-top: 5px;
+    font-size: 18px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    
+    color: rgb(71, 71, 71);
+
+}
+
+/* Rodapé */
+.footer{
+    grid-area: footer;
+    background-color: #e1e1ec;
+    text-align: center;
+    color: #e02041;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    padding-top: 15px;
+}
+
+.bbtn {
+    width: 160px;
+    height: 36px;
+     background: #e02041;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: 0;
+    margin-top: 23px;
+    transition: background-color 400ms;
+}
+
+.bbtn:hover {
+        opacity: 0.8;
+}
+
+.col-l{
+    grid-area: col-l;
+    background-color: #e1e1ec;   
+}
+
+.col-r{
+    grid-area: col-r;
+    background-color: #e1e1ec;   
+}
+
+
+@media only screen and (min-width: 768px) {
+    
+    body{
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto 24% 24% 24% 24% auto;
+        grid-template-rows: 10% 10% 5% auto 7%;
+        grid-template-areas:
+            "col-l   header  header  header  logout  col-r"
+            "col-l   buttons buttons buttons buttons col-r"	
+            "col-l   title   title   title   title   col-r"
+            "col-l   main    main    main    main    col-r"
+            "col-l   footer  footer  footer  footer  col-r"
+            
+    }
+    
+}
