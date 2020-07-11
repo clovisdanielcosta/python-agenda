@@ -41,7 +41,7 @@ def lista_eventos(request):
         usuario = request.user
         data_atual = datetime.now() - timedelta(days=1) # Pegando não atrasados de de até 1 hora atrás
         evento = Evento.objects.filter(usuario=usuario,
-                                       data_evento__gt=data_atual) # '__lt' para datas menores
+                                       data_evento__gt=data_atual).order_by('data_evento', 'titulo') # '__lt' para datas menores
         dados = {'eventos':evento}
         return render(request, 'agenda.html', dados)
 
@@ -50,9 +50,9 @@ def lista_eventos(request):
 def lista_todos_eventos(request):
         usuario = request.user
         if usuario == 'admin':
-                evento = Evento.objects.all()
+                evento = Evento.objects.all().order_by('data_evento', 'titulo')
         else:
-                evento = Evento.objects.filter(usuario=usuario)
+                evento = Evento.objects.filter(usuario=usuario).order_by('data_evento', 'titulo')
 
         dados = {'eventos': evento}
         return render(request, 'agenda.html', dados)
@@ -63,7 +63,7 @@ def lista_eventos_passados(request):
         usuario = request.user
         data_atual = datetime.now() - timedelta(hours=2) # Pegando não atrasados de de até 1 hora atrás
         evento = Evento.objects.filter(usuario=usuario,
-                                       data_evento__lt=data_atual) # '__lt' para datas menores
+                                       data_evento__lt=data_atual).order_by('data_evento', 'titulo') # '__lt' para datas menores
         dados = {'eventos':evento}
         return render(request, 'agenda.html', dados)
 

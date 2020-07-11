@@ -21,11 +21,11 @@ body{
 .header{
     grid-area: header;
     background-color: #e1e1ec;
-    font-size: 45px;
+    font-size: 40px;
     font-weight: bold;
     font-family: Roboto, Helvetica, sans-serif;
     color: rgb(71, 71, 71);
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 /* Logout do sistema */
@@ -96,11 +96,10 @@ body{
 .main {
     grid-area: main;
     background: white;
+    height: 25px;
     display: grid;
     grid-template-columns: 13% 20% 39% 21% 7%;
     justify-content: start;
-    height: 25px;
-    padding-top: 5px;
     font-size: 18px;
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: rgb(71, 71, 71);
@@ -109,25 +108,31 @@ body{
 /* Espaços de inícios dos registros no main */
 #main-date{
     text-align: center;
+    vertical-align: middle;
     border-bottom: 2px;
     border-bottom: solid #e1e1ec;
+    padding-top: 5px;
+    
 }
 #main-event{
     text-align: left;
     padding-left: 20px;
     border-bottom: 2px;
     border-bottom: solid #e1e1ec;
+    padding-top: 5px;
 }
 #main-detail{
     text-align: left;
     padding-left: 2px;
     border-bottom: 2px;
     border-bottom: solid #e1e1ec;
+    padding-top: 5px;
 }
 #main-local{
     text-align: left;
     border-bottom: 2px;
     border-bottom: solid #e1e1ec;
+    padding-top: 5px;
 }
 #main-action{  
     text-align: center;
@@ -142,6 +147,9 @@ body{
     text-align: center;
     display: flex;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 #footer-text{
@@ -184,11 +192,11 @@ body{
 
 /* Ícones */
 #icon-edit{
-    height: 25px;
-
+    height: 22px;
+    padding-top: 3px;
 }
 #icon-delete{
-    height: 25px;
+    height: 22px;
 }
 #icon-github{
     height: 30px;
@@ -217,9 +225,8 @@ body{
             "col-l   header  header  header  logout  col-r"
             "col-l   buttons buttons buttons buttons col-r"	
             "col-l   title   title   title   title   col-r"
-            "col-l   main    main    main    main    col-r"
-            "col-l   footer  footer  footer  footer  col-r"
-            
+            "col-l   main    main    main    main    col-r"    
+            "col-l   footer  footer  footer  footer  col-r"    
     }
     
 }

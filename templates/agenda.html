@@ -47,7 +47,7 @@
 	<div class="main">
 
 		{% for evento in eventos %}
-
+	
 		<div id="main-date" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
 			{{ evento.get_data_evento }}</div>
 		<div id="main-event" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
@@ -67,15 +67,7 @@
 		
 	</div>
 
-	<div class="footer"> 
-		<a href="https://www.linkedin.com/in/clovisdaniel/" target="_blank">
-		<img id="icon-github" src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png"/></a>
-		<a href="https://github.com/clovisdanielcosta" target="_blank">
-		<img id="icon-linkedin" src="https://img.icons8.com/fluent/48/000000/github.png"/></a>
-		<div id="footer-text">Desenvolvido por Clovis Daniel Costa</div>
-	</div>
-
-
 	<section class="col-r"></section>
+	 {% include "model-footer.html" %}
 </body>
 </html>
