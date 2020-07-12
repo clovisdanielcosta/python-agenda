@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+body, html {
+   height: 100vh;
+}
+
+/* Mobile First */
+body{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(auto, 3);
+    grid-template-areas:
+        "logo"	
+        "login"
+        "footer"
+}
+
+.logo{
+    grid-area: logo;
+    background-color: #e1e1ec;
+    text-align: center;
+    display: grid;
+    
+
+}
+
+.login {
+    grid-area: login;
+    background-color: #e1e1ec;
+    text-align: center;
+    display: grid;
+    
+    
+}
+
+/* Rodapé */
+.footer{
+    grid-area: footer;
+    background-color: #e1e1ec;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#footer-text{
+    color: #e02041;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+}
+
+.bbtn {
+    width: 160px;
+    height: 36px;
+    background: #e02041;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: 0;
+    margin-top: 23px;
+    transition: background-color 400ms;
+}
+
+.bbtn:hover {
+    opacity: 0.8;
+}
+
+.row-above{
+    grid-area: col-l;
+    background-color: #e1e1ec;   
+}
+
+.col-l{
+    grid-area: col-l;
+    background-color: #e1e1ec;   
+}
+
+.col-r{
+    grid-area: col-r;
+    background-color: #e1e1ec;   
+}
+
+/* Ícones */
+#icon-github{
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#icon-linkedin{
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+.logout #icon-logout{
+    padding-left: 10px;
+    padding-top: 10px;
+} 
+
+@media only screen and (min-width: 768px) {
+    
+    body{
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto 24% 24% auto;
+        grid-template-rows: 7% auto 7%;
+        grid-template-areas:
+            "col-l  row-above   row-above   col-r"	
+            "col-l  logo        login       col-r"
+            "col-l  footer      footer      col-r"    
+    }
+    
+}
