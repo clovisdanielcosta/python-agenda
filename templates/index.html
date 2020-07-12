@@ -11,17 +11,17 @@
 </head>
 
 <body>
-	<div class="col-l"></section>
+	<div class="row-above">2 row-above</div>
+	<div class="col-l">1 col-l</div>
 	
-	<div class="row-above"></div>
 		
-    <div class="logo">
-		<img id="logo-img" src="https://img.icons8.com/cotton/64/000000/edit--v1.png"/>
-		<div id="logo-title1">Appo</div>
-		<div id="logo-title1">Sua agenda de compromissos</div>
+    <div class="logo">3 logo
+		<img id="logo-img" src="assets/img/logo_appo.png"/>
 	</div>
+	<div id="logo-title1">Appo</div>
+	<div id="logo-title1">Sua agenda de compromissos</div>
 	
-	<div class="login">
+	<div class="login">4 login
 		<form action="submit" method="POST">{% csrf_token %}
 			<div align="center">
 				<label>Usuário:</label>
@@ -29,22 +29,22 @@
 				<label>Senha:</label>
 				<input type="password" name="password">
 				<button type="submit">
-					<img id="logo-img" src="https://img.icons8.com/cotton/64/000000/edit--v1.png"/>
+					<img id="logo-img" src=""/>
 					Entrar</button>
 			</div>
 		</form>
-
-		{% for message in messages %}
-		
-		<div align="center">
-            Erro: <strong> {{ message }} </strong>
-		</div>
 			
 	</div>
 
-	<div class="col-r"></div>
+	<div class="col-r">5 col-r</div>
 
-	{% include "model-footer.html" %}
+	<div class="footer"> 
+			<a href="https://www.linkedin.com/in/clovisdaniel/" target="_blank">
+			<img id="icon-github" src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png"/></a>
+			<a href="https://github.com/clovisdanielcosta" target="_blank">
+			<img id="icon-linkedin" src="https://img.icons8.com/fluent/48/000000/github.png"/></a>
+			<div id="footer-text">Desenvolvido por Clovis Daniel Costa</div>
+	</div>
 
 </body>
 </html>
