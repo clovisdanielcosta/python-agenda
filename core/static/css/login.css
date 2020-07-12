@@ -19,25 +19,65 @@ body{
 .logo{
     grid-area: logo;
     background-color: white;
-    text-align: center;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+#logo-img{
+    padding-left: 160px;
+}
+
+#logo-title1{
+    padding-left: 160px;
 }
 
 .login {
     grid-area: login;
-    background-color: white;
-    text-align: center;
+    padding: 96px;
+    background: white;
+    /*box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;*/ 
+    display: grid;
+    align-items: center;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400px;
+    color: rgb(71, 71, 71);   
+}
 
-    
-    
+.login input{
+    width: 160px;
+    height: 26px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: rgb(71, 71, 71);
+}
+
+.login #form-label{
+    width: 160px;
+    height: 26px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: rgb(71, 71, 71);
+}
+
+.login #label-error{
+    height: 26px;
+    text-align: left;
+    width: 200px;
+    color: red;
 }
 
 /* Rodapé */
 .footer{
     grid-area: footer;
-    background-color: #e1e1ec;
+    background-color: #f0f0f5;
     text-align: center;
+    display: flex;
+    justify-content: center;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -53,8 +93,9 @@ body{
     padding-left: 5px;
 }
 
+
 .bbtn {
-    width: 160px;
+    width: 170px;
     height: 36px;
     background: #e02041;
     border-radius: 8px;
@@ -72,17 +113,18 @@ body{
 
 .row-above{
     grid-area: row-above;
-    background-color: #e1e1ec;  
+    background: #f0f0f5;
 }
 
 .col-l{
     grid-area: col-l;
-    background-color: #e1e1ec;   
+    background: #f0f0f5;    
 }
 
 .col-r{
     grid-area: col-r;
-    background-color: #e1e1ec;   
+    background: #f0f0f5;
+       
 }
 
 /* Ícones */
@@ -103,10 +145,10 @@ body{
     body{
         margin: 0;
         display: grid;
-        grid-template-columns: 7% auto 24% 7%;
+        grid-template-columns: 4% auto 25% 4%;
         grid-template-rows: 7% auto 7%;
         grid-template-areas:
-            "col-l row-above row-above col-r"	
+            "row-above row-above row-above col-r"	
             "col-l logo login col-r"
             "col-l footer footer col-r"    
     }

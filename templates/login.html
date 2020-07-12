@@ -1,27 +1,62 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="pt_br">
 <head>
     <meta charset="UTF-8">
-    <title>Agenda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login</title>	
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
 </head>
+
 <body>
-<h1>Login</h1>
-    <form action="submit" method="POST">{% csrf_token %}
-        <div align="center">
-            <label>Usuário:</label>
-            <input type="text" name="username">
-            <label>Senha:</label>
-            <input type="password" name="password">
-            <button type="submit">Entrar</button>
-        </div>
-    </form>
+	<div class="row-above"></div>
+	<div class="col-l"></div>
+	
+		
+    <div class="logo">
+		<div id="logo-img">
+			<img width="80%" src="{% static 'img/logo_appo.png' %}"/>
+		</div>
+		<div id="logo-title1" >
+			<img width="80%" src="{% static 'img/appointments.png' %}"/>
+		</div>
+	</div>
+	
+	<div class="login">
+		
+		<form action="submit" method="POST"> {% csrf_token %}
+				<label id="form-label">Acessar agenda</label><br>
+				<label>Usuário:</label><br>
+				<input type="text" name="username"><br>
+				<label>Senha:</label><br>
+				<input type="password" name="password"><br>
+				{% for message in messages %}
+				
+				<label id="label-error">
+					<strong> {{ message }} </strong>
+				</label>
+				{% endfor %}
+				<div>
+					<button class="bbtn" type="submit">
+						<img class="logo-img" src=""/>Entrar</button>
+				<div>	
+				</form>
 
-    {% for message in messages %}
-        <div align="center">
-            Erro: <strong> {{ message }} </strong>
-        </div>
-    {% endfor %}
+		
+		
+	</div>
 
+	<div class="col-r"></div>
+
+	<div class="footer"> 
+			<a href="https://www.linkedin.com/in/clovisdaniel/" target="_blank">
+			<img id="icon-github" src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png"/></a>
+			<a href="https://github.com/clovisdanielcosta" target="_blank">
+			<img id="icon-linkedin" src="https://img.icons8.com/fluent/48/000000/github.png"/></a>
+			<div id="footer-text">Desenvolvido por Clovis Daniel Costa</div>
+	</div>
 
 </body>
 </html>

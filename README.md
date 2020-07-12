@@ -1,5 +1,5 @@
 <h3 align="center">
-<img alt="Logo" src="assets/img/em-obras.png" width="65%">
+<img alt="Logo" src="core/static/img/em-obras.png" width="65%">
 </h3>
 <h1 align="center">
 :small_red_triangle_down:  Agenda de Compromissos
