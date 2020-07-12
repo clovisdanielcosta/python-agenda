@@ -32,31 +32,23 @@
 				<input type="text" name="username"><br>
 				<label>Senha:</label><br>
 				<input type="password" name="password"><br>
-				{% for message in messages %}
-				
-				<label id="label-error">
-					<strong> {{ message }} </strong>
-				</label>
-				{% endfor %}
 				<div>
+				<label id="label-error">
+				{% for message in messages %}
+					<strong> {{ message }} </strong>
+				{% endfor %}
+				</label><br>
+
 					<button class="bbtn" type="submit">
 						<img class="logo-img" src=""/>Entrar</button>
 				<div>	
-				</form>
-
-		
-		
+		</form>
+	
 	</div>
 
 	<div class="col-r"></div>
-
-	<div class="footer"> 
-			<a href="https://www.linkedin.com/in/clovisdaniel/" target="_blank">
-			<img id="icon-github" src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png"/></a>
-			<a href="https://github.com/clovisdanielcosta" target="_blank">
-			<img id="icon-linkedin" src="https://img.icons8.com/fluent/48/000000/github.png"/></a>
-			<div id="footer-text">Desenvolvido por Clovis Daniel Costa</div>
-	</div>
+	
+ {% include "model-footer.html" %}
 
 </body>
 </html>

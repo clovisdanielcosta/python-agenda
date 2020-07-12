@@ -34,7 +34,6 @@ body{
 
 .login {
     grid-area: login;
-    padding: 96px;
     background: white;
     /*box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
     border-radius: 8px;*/ 
@@ -67,7 +66,6 @@ body{
 .login #label-error{
     height: 26px;
     text-align: left;
-    width: 200px;
     color: red;
 }
 

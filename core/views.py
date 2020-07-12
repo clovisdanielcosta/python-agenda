@@ -25,7 +25,7 @@ def submit_login(request):
                         login(request, usuario)
                         return redirect('/')
                 else:
-                        messages.error(request, 'Usuário ou Senha inválidos')
+                        messages.error(request, 'Usuário/Senha inválidos')
         return  redirect('/')
 
                 # caso seja precisa usar uma view para o index importe o 'redirect' tbem de 'shortcurts'
