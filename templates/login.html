@@ -17,11 +17,9 @@
 		
     <div class="logo">
 		<div id="logo-img">
-			<img width="80%" src="{% static 'img/logo_appo.png' %}"/>
+			<img width="80%" src="{% static 'img/logo_appo_big.png' %}"/>
 		</div>
-		<div id="logo-title1" >
-			<img width="80%" src="{% static 'img/appointments.png' %}"/>
-		</div>
+
 	</div>
 	
 	<div class="login">
@@ -32,16 +30,15 @@
 				<input type="text" name="username"><br>
 				<label>Senha:</label><br>
 				<input type="password" name="password"><br>
-				<div>
+				
 				<label id="label-error">
 				{% for message in messages %}
 					<strong> {{ message }} </strong>
 				{% endfor %}
 				</label><br>
 
-					<button class="bbtn" type="submit">
-						<img class="logo-img" src=""/>Entrar</button>
-				<div>	
+					<button class="bbtn" type="submit">Entrar</button>
+				
 		</form>
 	
 	</div>
