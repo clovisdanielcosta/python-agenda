@@ -211,7 +211,7 @@ body{
 }
 .logout #icon-logout{
     padding-left: 10px;
-    padding-top: 10px;
+    padding-top: 5px;
 } 
 
 .logout #icon-user{
@@ -219,7 +219,6 @@ body{
     height: 35%;
     padding-top: 10px ;
     padding-right: 5px ;
-
 }
 
 @media only screen and (min-width: 768px) {

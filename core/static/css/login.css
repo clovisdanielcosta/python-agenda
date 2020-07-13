@@ -19,8 +19,6 @@ body{
 .logo{
     grid-area: logo;
     background-color: white;
-    display: flex;
-    flex-direction: column;
     
 }
 
@@ -28,15 +26,19 @@ body{
     display: flex;
     align-content: center;
     justify-content: center;
-   padding-top: 130px;
+    align-items: center;
+    padding: 20%;
+    
+  
    
 }
 
 .login {
     grid-area: login;
-    padding-right: 50px;
-    padding-bottom: 50px;
-    background: white; 
+    padding-bottom: 30px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
     display: grid;
     align-items: center;
     font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -102,7 +104,7 @@ body{
     font-weight: bold;
     font-size: 14px;
     border: 0;
-    margin-top: 23px;
+    margin-top: 8px;
     transition: background-color 400ms;
 }
 
@@ -143,12 +145,11 @@ body{
     body{
         margin: 0;
         display: grid;
-        grid-template-columns: 4% auto 30% 4%;
-        grid-template-rows: 8.5% auto 7%;
+        grid-template-columns: auto 70%;
+        grid-template-rows: auto 7%;
         grid-template-areas:
-            "row-above row-above row-above col-r"	
-            "col-l logo login col-r"
-            "col-l footer footer col-r"    
+            "logo logo login login"	
+            "footer footer footer footer"    
     }
     
 }
