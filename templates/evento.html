@@ -1,29 +1,44 @@
-{% extends "model-page.html" %}
+{% load static %}
+{% include "model-header.html" %}
 
-{% block content %}
-    <h2>Novo Evento</h2>
-    <form action="submit" method="POST"> {% csrf_token %}
-        <br>
-        <input type="text" name="id_evento" size="23" value="{{ evento.id }}" hidden>
-        <label>Título:</label>
-        <br>
-        <input required type="text" name="titulo" size="23" value="{{ evento.titulo }}">
-        <br>
-        <label>Data do Evento:</label>
-        <br>
-        <input required type="datetime-local" name="data_evento" value="{{ evento.get_data_input_evento }}">
-        <br>
-        <label>Local do Evento:</label>
-        <br>
-        <input type="text" name="local_evento" size="23" value="{{ evento.local }}">
-        <br>
-        <label>Descrição:</label>
-        <br>
-        <textarea name="descricao" rows="5" cols="24">{{ evento.descricao }}</textarea>
-         <br><br>
-        <button type="submit">Salvar</button>
-        <a href="/">
-            <button type="button">Cancelar</button>
-        </a>
-    </form>
-{% endblock %}
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/evento.css' %}?version=1">
+    <title>Novo Evento</title>	
+</head>
+
+    <div class="header">
+        <img id="icon-logo-small" src="{% static 'img/logo_appo_small_bkg.png' %}"/>
+        Novo Evento
+    </div>
+
+    <div class="new-event">
+        <form action="submit" method="POST"> {% csrf_token %}
+            <br>
+            <input type="text" name="id_evento" size="23" value="{{ evento.id }}" hidden>
+            <label>Título:</label>
+            <br>
+            <input required type="text" name="titulo" size="23" value="{{ evento.titulo }}">
+            <br>
+            <label>Data do Evento:</label>
+            <br>
+            <input id="input-data" required type="datetime-local" name="data_evento" value="{{ evento.get_data_input_evento }}">
+            <br>
+            <label>Local do Evento:</label>
+            <br>
+            <input type="text" name="local_evento" size="23" value="{{ evento.local }}">
+            <br>
+            <label>Descrição:</label>
+            <br>
+            <textarea name="descricao" rows="5" cols="36">{{ evento.descricao }}</textarea>
+            <br><br>
+            <button class="bbtn" type="submit">Salvar</button>
+            <a href="/">
+                <button class="bbtn" type="button">Cancelar</button>
+            </a>
+        </form>
+    </div>
+
+
+{% include "model-footer.html" %}

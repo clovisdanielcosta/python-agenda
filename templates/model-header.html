@@ -1,10 +1,20 @@
-
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
     <meta charset="UTF-8">
-    <title>Agenda</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/agenda.css' %}?version=1">	
 
-    <div align="right">
-        Usuário: {{ user }} |
-        <a href="/logout">Logout</a>
-    </div>
-
-    <h1>Agenda Pessoal</h1>
+</head>
+	
+	<div class="logout">
+		<img id="icon-user" src="{% static 'img/icon-user.png' %}"/></a>
+		<div id="user">
+			<b id="user-name"> {{ user }} </b>
+		</div>
+		<div id="icon-logout">
+			<a href="/logout">
+				<img width="45px" src="{% static 'img/icon-logout.png' %}?version=1"/></a>
+		</div>
+	</div>
