@@ -51,6 +51,7 @@ body{
     color: #e02041;
     font-size: 18px;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 /* Botões */
