@@ -21,12 +21,12 @@ from  django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('agenda/', views.lista_eventos),
-    path('passado/', views.lista_eventos_passados),
-    path('todos/', views.lista_todos_eventos),
+    path('agenda/passado/', views.lista_eventos_passados),
+    path('agenda/todos/', views.lista_todos_eventos),
     path('agenda/lista/<int:id_usuario>/', views.json_lista_evento),
-    path('evento/', views.evento),
-    path('evento/submit', views.submit_evento),
-    path('evento/delete/<int:id_evento>/', views.delete_evento),
+    path('agenda/evento/', views.evento),
+    path('agenda/evento/submit', views.submit_evento),
+    path('agenda/evento/delete/<int:id_evento>/', views.delete_evento),
     path('', RedirectView.as_view(url='/agenda/')), # Redirecionando o index diretamente
     path('login/', views.login_user),
     path('login/submit', views.submit_login),

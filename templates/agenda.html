@@ -27,15 +27,15 @@
 		Agenda de Compromissos
 	</div>
 	<div class="buttons">
-		<a href="agenda/">
+		<a href="https://python-agenda.herokuapp.com/">
 			<button class="bbtn" type="button">Início</button></a>
-		<a href="evento/">
+		<a href="https://python-agenda.herokuapp.com/evento/">
 			<button class="bbtn" type="button">Novo Evento</button></a>
-		<a href="passado/">
+		<a href="https://python-agenda.herokuapp.com/passado/">
 			<button class="bbtn" type="button">Eventos Passados</button></a>
-		<a href="todos/">
+		<a href="https://python-agenda.herokuapp.com/todos/">
 			<button class="bbtn" type="button">Todos Eventos</button></a>
-		<a href="exportar/exporta/" target="_blank">
+		<a href="https://python-agenda.herokuapp.com/exportar/exporta/" target="_blank">
 			<button class="bbtn" type="button">Exportar Dados</button></a>
 	</div>
 	
@@ -61,9 +61,9 @@
 		<div id="main-local" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
 			{{ evento.local }}</div>
 		<div id="main-action">
-			<a href="agenda/evento/?id={{ evento.id }}">
+			<a href="https://python-agenda.herokuapp.com/agenda/evento/?id={{ evento.id }}">
 				<img id="icon-edit" src="https://img.icons8.com/cotton/64/000000/edit--v1.png"/></a>
-			<a href="agenda/evento/delete/{{ evento.id }}">
+			<a href="https://python-agenda.herokuapp.com/agenda/evento/delete/{{ evento.id }}">
 				<img id="icon-delete" src="https://img.icons8.com/fluent/48/000000/delete-sign.png"/></a>
 		</div>
 		
