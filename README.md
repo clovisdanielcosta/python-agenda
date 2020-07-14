@@ -105,7 +105,7 @@ Nesse projeto foram usadas as seguintes tecnologias:
 2. Criaçao da Logo do app.
 3. Adição de campo na tabela evento para incluir o local do evento.
 4. Inclusão de Consulta  Eventos Passados e Todos os Eventos.
-5. Criada função para Exportar dados em formato JSON.
+5. Criada função para Exportar Dados em formato JSON.
 6. Migração do banco de dados de Sqlite para Postgres.
 
 ## :small_orange_diamond: Licença
