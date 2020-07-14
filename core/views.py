@@ -55,7 +55,7 @@ def lista_todos_eventos(request):
                 evento = Evento.objects.filter(usuario=usuario).order_by('data_evento', 'titulo')
 
         dados = {'eventos': evento}
-        return render(request, 'agenda.html', dados)
+        return render(request, 'todos.html', dados)
 
 # Lista apenas os eventos passados
 @login_required(login_url='/login/') # Precisa colocar a barra no início pra não concatenar
@@ -65,7 +65,7 @@ def lista_eventos_passados(request):
         evento = Evento.objects.filter(usuario=usuario,
                                        data_evento__lt=data_atual).order_by('data_evento', 'titulo') # '__lt' para datas menores
         dados = {'eventos':evento}
-        return render(request, 'agenda.html', dados)
+        return render(request, 'passado.html', dados)
 
 # Consulta um evento pelo id
 @login_required(login_url='/login/')
