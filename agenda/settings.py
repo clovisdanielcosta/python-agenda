@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u8ygg+9s7@ms4!zb3#g$=b9iq%$0l4i!oj)-!zj4ma%&us_g$6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://python-agenda.herokuapp.com/','127.0.0.1']
 
