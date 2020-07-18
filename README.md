@@ -85,12 +85,12 @@ Nesse projeto foram usadas as seguintes tecnologias:
 
 1. Para que o Django localize seus arquivos estáticos, por exemplo de imagens ou estilos, deverá criar um diretório dentro do projeto chamado "static" e colocar estes arquivos dentro desta pasta. Depois disto basta fazer as referências deles dentro dos templates das seguintes formas:
 
-    `<img width="45px" src="{% static 'img/icon-logout.png' %}?version=1"/></a>`
+```html
+    <img width="45px" src="{% static 'img/icon-logout.png' %}?version=1"/>
 
-    `<link rel="stylesheet" href="{% static 'css/agenda.css' %}?version=1">`
+    <link rel="stylesheet" href="{% static 'css/agenda.css' %}?version=1">
 
-    `<a href="<a href="http://127.0.0.1:8000/agenda/evento/">/agenda/evento/">`
-
+```
 2. Para saber mais sobre a migração de Sqlite para Postgres acesse o link abaixo:
 
     [https://www.youtube.com/watch?v=ZgRkGfoy2nE](https://www.youtube.com/watch?v=ZgRkGfoy2nE)
