@@ -85,7 +85,8 @@ Nesse projeto foram usadas as seguintes tecnologias:
 
 1. Para que o Django localize seus arquivos estáticos, por exemplo de imagens ou estilos, deverá criar um diretório dentro do projeto chamado "static" e colocar estes arquivos dentro desta pasta. Depois disto basta fazer as referências deles dentro dos templates das seguintes formas:
 
-```html
+```python
+
     <img width="45px" src="{% static 'img/icon-logout.png' %}?version=1"/>
 
     <link rel="stylesheet" href="{% static 'css/agenda.css' %}?version=1">
