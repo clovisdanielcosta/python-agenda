@@ -65,7 +65,7 @@ body{
     grid-area: title;
     background-color: #f0f0f5;
     display: grid;
-    grid-template-columns: 13% 20% 39% 21% 7%;
+    grid-template-columns: 13% 13% 35% 13% 10% 10% 5%;
     justify-content: start;
     padding-top: 5px;
     font-size: 20px;
@@ -99,7 +99,7 @@ body{
     background: white;
     height: 25px;
     display: grid;
-    grid-template-columns: 13% 20% 39% 21% 7%;
+    grid-template-columns: 13% 13% 35% 13% 10% 10% 5%;
     justify-content: start;
     font-size: 18px;
     font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -117,7 +117,7 @@ body{
 }
 #main-event{
     text-align: left;
-    padding-left: 20px;
+    padding-left: 50px;
     border-bottom: 2px;
     border-bottom: solid #f0f0f5;
     padding-top: 5px;
@@ -154,7 +154,7 @@ body{
 }
 
 #footer-text{
-    color: #e02041;
+    color: #007bff;
     font-size: 13px;
     font-weight: bold;
     font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -166,7 +166,7 @@ body{
 .bbtn {
     width: 160px;
     height: 36px;
-    background: #e02041;
+    background: #6610f2;
     border-radius: 8px;
     color: white;
     font-weight: bold;
@@ -192,6 +192,7 @@ body{
 
 
 /* Ícones */
+
 #icon-edit{
     height: 22px;
     padding-top: 3px;
@@ -217,10 +218,10 @@ body{
 
 .logout #icon-user{
     width: 25px;
-    height: 25px;
-    padding-top: 8px ;
+    height: 25px;    padding-top: 8px ;
     padding-right: 5px ;
 }
+
 
 @media only screen and (min-width: 768px) {
     

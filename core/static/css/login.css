@@ -26,7 +26,7 @@ body{
     align-content: center;
     justify-content: center;
     align-items: center;
-    padding: 20%;
+    padding: 10%;
 }
 
 .login {
@@ -89,7 +89,7 @@ input:focus {
 }
 
 #footer-text{
-    color: #e02041;
+    color: #007bff;
     font-size: 13px;
     font-weight: bold;
     font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -102,7 +102,7 @@ input:focus {
 .bbtn {
     width: 170px;
     height: 36px;
-    background: #e02041;
+    background: #6610f2;
     border-radius: 8px;
     color: white;
     font-weight: bold;

@@ -8,30 +8,51 @@
     <title>Novo Evento</title>	
 </head>
 
-    <div class="header">
-        <img id="icon-logo-small" src="{% static 'img/logo_appo_small_bkg.png' %}"/>
-        Novo Evento
-    </div>
+    <script type="text/javascript">
+            function barCode(){
+                document.getElementById("local_evento").innerHTML = '23'
+            };
+    </script>
 
-    <div class="new-event">
-        <form action="submit" method="POST"> {% csrf_token %}
+<div class="header">
+    <img id="icon-logo-small" src="{% static 'img/logo_appo_small_bkg.png' %}?version=1"/>
+    Novo Produto
+</div>
+
+<div class="new-event">
+    <form action="submit" method="POST"> {% csrf_token %}
+        <label>Leitor de código de barras:</label>
+        <br>
+        <button type="button">
+            <img onclick="barCode()"
+            width="335px" 
+            id="icon-logo-small" 
+            src="{% static 'img/bar_code2.png' %}?version=1"/>
+            </button>
+            <br>
             <br>
             <input type="text" name="id_evento" size="23" value="{{ evento.id }}" hidden>
-            <label>Título:</label>
-            <br>
-            <input required type="text" name="titulo" size="23" value="{{ evento.titulo }}">
-            <br>
-            <label>Data do Evento:</label>
+            
+            <label>Data da Compra:</label>
             <br>
             <input id="input-data" required type="datetime-local" name="data_evento" value="{{ evento.get_data_input_evento }}">
             <br>
-            <label>Local do Evento:</label>
+            
+            <label>Usuário:</label>
             <br>
             <input type="text" name="local_evento" size="23" value="{{ evento.local }}">
             <br>
-            <label>Descrição:</label>
+            
+            <label>Descrição do Produto:</label>
             <br>
-            <textarea name="descricao" rows="5" cols="36">{{ evento.descricao }}</textarea>
+            <textarea name="descricao" rows="1" cols="36">{{ evento.descricao }}</textarea>
+            <br>
+            
+            <label>Valor:</label>
+            <br>
+            <input required type="text" name="titulo" size="23" value="{{ evento.titulo }}">
+            <br>
+            
             <br><br>
             <button class="bbtn" type="submit">Salvar</button>
             <a href="/">

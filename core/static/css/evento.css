@@ -93,7 +93,7 @@ body{
 }
 
 #footer-text{
-    color: #e02041;
+    color: #007bff;
     font-size: 13px;
     font-weight: bold;
     font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -107,7 +107,7 @@ body{
     width: 170px;
     height: 36px;
     margin-right: 3px;
-    background: #e02041;
+    background: #6610f2;
     border-radius: 8px;
     color: white;
     font-weight: bold;
