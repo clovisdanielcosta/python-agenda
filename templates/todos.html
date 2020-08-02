@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="{% static 'css/agenda.css' %}?version=1">
-    <title>Agenda Pessoal</title>	
+    <title>Carrefour - Calculadora de Mercado</title>	
 
 </head>
 
@@ -23,43 +23,50 @@
 		</div>
 	</div>
 	<div class="header">
-		<img id="icon-logo-small" src="{% static 'img/logo_appo_small_bkg.png' %}"/>
-		Agenda de Compromissos
+		<img id="icon-logo-small" src="{% static 'img/logo_appo_small_bkg.png' %}?version=3"/>
+		Lista de Compras | Total: <a id="totProd" style="color: #e83e8c;"> 31,92 </a>
+			<a id="totProd" style="color: #20c997;">(Maria)</a>
 	</div>
 	<div class="buttons">
 		<a href="http://127.0.0.1:8000/agenda">
 			<button class="bbtn" type="button">Início</button></a>
 		<a href="http://127.0.0.1:8000/agenda/evento/">
-			<button class="bbtn" type="button">Novo Evento</button></a>
+			<button class="bbtn" type="button">Novo Ítem</button></a>
 		<a href="http://127.0.0.1:8000/agenda/passado">
-			<button class="bbtn" type="button">Eventos Passados</button></a>
+			<button class="bbtn" type="button">Lista Passada</button></a>
 		<a>
-			<button class="bbtn" type="button">Todos Eventos</button></a>
+			<button class="bbtn" type="button">Lista Esposa</button></a>
 		<a href="http://127.0.0.1:8000/exportar/exporta/" target="_blank">
-			<button class="bbtn" type="button">Exportar Dados</button></a>
+			<button class="bbtn" type="button">Exportar Caixa</button></a>
 	</div>
 	
     <div class="title">
 		<div id="title-date">Data/Horário</div>
-		<div id="title-event">Evento</div>
-		<div id="title-detail">Detalhes do Evento</div>
-		<div id="title-local">Local</div>
+		<div id="title-local">Usuário</div>
+		<div id="title-detail">Descrição do Produto</div>
+		<div id="title-event">Quantidade</div>
+		<div id="title-action">Valor</div>
+		<div id="title-action">Total</div>
 		<div id="title-action">Ações</div>
 	</div>
 
 	
-	<div class="main">
+	<div class="main">	
 
 		{% for evento in eventos %}
 	
 		<div id="main-date" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
 			{{ evento.get_data_evento }}</div>
-		<div id="main-event" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
-			{{ evento.titulo }}</div>
-		<div id="main-detail" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
-			{{ evento.descricao }}</div>
 		<div id="main-local" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
 			{{ evento.local }}</div>
+		<div id="main-detail" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
+			{{ evento.descricao }}</div>
+		<div id="main-event" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
+			1</div>
+		<div id="main-event" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
+			{{ evento.titulo }}</div>
+		<div id="main-event" style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
+			{{ evento.titulo }}</div>
 		<div id="main-action">
 			<a href="http://127.0.0.1:8000/agenda/evento/?id={{ evento.id }}">
 				<img id="icon-edit" src="https://img.icons8.com/cotton/64/000000/edit--v1.png"/></a>

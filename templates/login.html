@@ -20,19 +20,19 @@
 	<div class="login">
 		
 		<form action="submit" method="POST"> {% csrf_token %}
-				<label id="form-label">Acessar agenda</label><br>
+			<label hidden>Senha:</label><br>
+			<label id="form-label">Acessar Grupo</label><br>
+				<input type="text" name="password" value="user12345" hidden><br>
 				<label>Usuário:</label><br>
 				<input type="text" name="username"><br>
-				<label>Senha:</label><br>
-				<input type="password" name="password"><br>
-				
 				<label id="label-error">
-				{% for message in messages %}
+					{% for message in messages %}
 					<strong> {{ message }} </strong>
-				{% endfor %}
+					{% endfor %}
 				</label><br>
-
-					<button class="bbtn" type="submit">Entrar</button>
+				
+				<button class="bbtn" type="submit">Entrar</button><br><br>
+				<img width="75%" id="icon-logo-small" src="{% static 'img/qrcode.png' %}?version=1"/>
 				
 		</form>
 	

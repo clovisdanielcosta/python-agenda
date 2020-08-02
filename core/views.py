@@ -49,11 +49,8 @@ def lista_eventos(request):
 @login_required(login_url='/login/')
 def lista_todos_eventos(request):
         usuario = request.user
-        if usuario == 'admin':
-                evento = Evento.objects.all().order_by('data_evento', 'titulo')
-        else:
-                evento = Evento.objects.filter(usuario=usuario).order_by('data_evento', 'titulo')
-
+        evento = Evento.objects.filter(usuario=usuario,
+                                       local='Maria').order_by('data_evento', 'titulo') # '__lt' para datas menores
         dados = {'eventos': evento}
         return render(request, 'todos.html', dados)
 
