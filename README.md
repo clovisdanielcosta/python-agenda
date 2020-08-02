@@ -58,7 +58,7 @@ Nesse projeto foram usadas as seguintes tecnologias:
 
     `$ git clone -b localhost https://github.com/clovisdanielcosta/python-agenda.git`
 
- 3. Entre na pasta do app:
+3. Entre na pasta do app:
 
     `$ cd python-agenda`
 
@@ -66,13 +66,25 @@ Nesse projeto foram usadas as seguintes tecnologias:
   
     `$ pip install -r requirements.txt`
 
-5. Rode este comando para subir o servidor:
+5. Rode este comando para efetuar as migrations:
+  
+    `$ python manage.py migrate`
+
+6. Rode este comando para criar o super usuário:
+  
+    `$ python manage.py createsuperuser --username admin`
+
+7. Rode este comando para subir o servidor:
   
     `$ python manage.py runserver`
 
-6. Na barra de endereço de um navegador digite:
+8. Digite o comando abaixo na barra de endereço de um navegador e crie um usuário:
   
-    `localhost:8000`
+    `localhost:8000/admin`
+
+9. Digite o comando abaixo na barra de endereço de um navegador para logar no sistema:
+  
+    `localhost:8000/`
 
 ## :books: Aprendendo
 
