@@ -99,9 +99,9 @@ Nesse projeto foram usadas as seguintes tecnologias:
 
 ```python
 
-    <img width="45px" src="{% static 'img/icon-logout.png' %}?version=1"/>
+    "<img width="45px" src="{% static 'img/icon-logout.png' %}?version=1"/>"
 
-    <link rel="stylesheet" href="{% static 'css/agenda.css' %}?version=1">
+    "<link rel="stylesheet" href="{% static 'css/agenda.css' %}?version=1">"
 
 ```
 2. Para saber mais sobre a migração de Sqlite para Postgres acesse o link abaixo:
